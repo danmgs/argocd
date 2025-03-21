@@ -2863,7 +2863,7 @@ data:
       "refresh": "1m",
       "schemaVersion": 38,
       "style": "dark",
-      "tags": [],
+      "tags": ["istio"],
       "templating": {
         "list": [
           {
