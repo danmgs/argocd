@@ -48,7 +48,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -144,7 +144,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -239,7 +239,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -334,7 +334,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -429,7 +429,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -507,7 +507,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "000000001"
+                "uid": "${datasource}"
               },
               "editorMode": "code",
               "expr": "sum(rate(nodejs_app_requests_total{serviceName=\"$serviceName\"}[1m])) by (host)",
@@ -522,7 +522,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -600,7 +600,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "000000001"
+                "uid": "${datasource}"
               },
               "editorMode": "code",
               "expr": "sum(nodejs_app_requests_active{serviceName=\"$serviceName\"}) by (host)",
@@ -615,7 +615,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -713,7 +713,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -820,7 +820,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -911,7 +911,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "000000001"
+                "uid": "${datasource}"
               },
               "editorMode": "code",
               "exemplar": false,
@@ -927,7 +927,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -1018,7 +1018,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "000000001"
+                "uid": "${datasource}"
               },
               "editorMode": "code",
               "exemplar": false,
@@ -1034,7 +1034,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -1112,7 +1112,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "000000001"
+                "uid": "${datasource}"
               },
               "editorMode": "code",
               "expr": "sum(rate(nodejs_app_page_execute_count{serviceName=\"$serviceName\",code=\"200\"}[5m])) by (page)",
@@ -1127,7 +1127,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -1206,7 +1206,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "000000001"
+                "uid": "${datasource}"
               },
               "editorMode": "code",
               "expr": "sum(rate(nodejs_app_page_execute_count{serviceName=\"$serviceName\"}[5m])) by (code)",
@@ -1221,7 +1221,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "000000001"
+            "uid": "${datasource}"
           },
           "fieldConfig": {
             "defaults": {
@@ -1300,7 +1300,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "000000001"
+                "uid": "${datasource}"
               },
               "editorMode": "code",
               "expr": "sum(rate(nodejs_app_page_execute_count{serviceName=\"$serviceName\",code=\"404\"}[10m])) by (page)",
@@ -1326,7 +1326,20 @@ data:
             "query": "prochain-startatlas-api",
             "skipUrlSync": false,
             "type": "constant"
-          }
+          },
+          {
+            "hide": 0,
+            "includeAll": false,
+            "multi": false,
+            "name": "datasource",
+            "options": [],
+            "query": "prometheus",
+            "queryValue": "",
+            "refresh": 1,
+            "regex": "",
+            "skipUrlSync": false,
+            "type": "datasource"
+          }      
         ]
       },
       "time": {
