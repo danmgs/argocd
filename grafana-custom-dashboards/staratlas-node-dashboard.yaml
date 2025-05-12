@@ -1328,18 +1328,13 @@ data:
             "type": "constant"
           },
           {
-            "hide": 0,
-            "includeAll": false,
-            "multi": false,
             "name": "datasource",
             "options": [],
             "query": "prometheus",
-            "queryValue": "",
             "refresh": 1,
             "regex": "",
-            "skipUrlSync": false,
             "type": "datasource"
-          }      
+          }   
         ]
       },
       "time": {
