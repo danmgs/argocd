@@ -1323,7 +1323,7 @@ data:
             "hide": 2,
             "label": "serviceName",
             "name": "serviceName",
-            "query": "prochain-startatlas-api",
+            "query": "prochain-staratlas-api",
             "skipUrlSync": false,
             "type": "constant"
           },
