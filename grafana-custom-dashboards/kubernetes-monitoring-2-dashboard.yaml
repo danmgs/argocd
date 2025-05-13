@@ -80,7 +80,7 @@ data:
       "panels": [
         {
           "collapsed": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "prometheus",
           "gridPos": {
             "h": 1,
             "w": 24,
@@ -167,7 +167,7 @@ data:
         },
         {
           "cacheTimeout": null,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "prometheus",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -483,7 +483,7 @@ data:
         },
         {
           "cacheTimeout": null,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "prometheus",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -560,7 +560,7 @@ data:
         },
         {
           "cacheTimeout": null,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "prometheus",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -714,7 +714,7 @@ data:
         },
         {
           "cacheTimeout": null,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "prometheus",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -791,7 +791,7 @@ data:
         },
         {
           "cacheTimeout": null,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "prometheus",
           "fieldConfig": {
             "defaults": {
               "color": {
@@ -868,7 +868,7 @@ data:
         },
         {
           "collapsed": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "prometheus",
           "gridPos": {
             "h": 1,
             "w": 24,
@@ -1927,7 +1927,7 @@ data:
         },
         {
           "collapsed": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "prometheus",
           "gridPos": {
             "h": 1,
             "w": 24,
@@ -2442,7 +2442,7 @@ data:
         },
         {
           "collapsed": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "prometheus",
           "gridPos": {
             "h": 1,
             "w": 24,
@@ -3076,7 +3076,7 @@ data:
         },
         {
           "collapsed": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "prometheus",
           "gridPos": {
             "h": 1,
             "w": 24,
