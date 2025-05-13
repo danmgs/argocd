@@ -1,3 +1,4 @@
+# https://grafana.com/grafana/dashboards/10001-jaeger/
 apiVersion: v1
 kind: ConfigMap
 metadata:
