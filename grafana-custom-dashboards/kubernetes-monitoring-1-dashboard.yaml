@@ -2183,13 +2183,13 @@ data:
               "type": "prometheus",
               "uid": "prometheus"
             },
-            "definition": "container_network_transmit_bytes_total{kubernetes_io_os=\"linux\"}",
+            "definition": "container_network_transmit_bytes_total{}",
             "includeAll": true,
             "multi": true,
             "name": "netface",
             "options": [],
             "query": {
-              "query": "container_network_transmit_bytes_total{kubernetes_io_os=\"linux\"}",
+              "query": "container_network_transmit_bytes_total{}",
               "refId": "StandardVariableQuery"
             },
             "refresh": 1,
