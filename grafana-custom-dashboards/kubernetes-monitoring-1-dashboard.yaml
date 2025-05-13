@@ -2194,7 +2194,6 @@ data:
             },
             "refresh": 1,
             "regex": "/.*interface=\"([^"]*)\".*/",
-            interface="([^"]*)"
             "sort": 1,
             "type": "query"
           }
