@@ -3544,7 +3544,7 @@ data:
             "allValue": null,
             "current": {},
             "datasource": "$cluster",
-            "definition": "label_values(kube_pod_info{container!=\"POD\", namespace=\"$namespace\"},container)",
+            "definition": "label_values(node_namespace_pod_container:container_memory_rss{namespace=~\"$namespace\"},container)",
             "description": null,
             "error": null,
             "hide": 0,
@@ -3554,7 +3554,7 @@ data:
             "name": "application",
             "options": [],
             "query": {
-              "query": "label_values(kube_pod_info{container!=\"POD\", namespace=\"$namespace\"},container)",
+              "query": "label_values(node_namespace_pod_container:container_memory_rss{namespace=~\"$namespace\"},container)",
               "refId": "Kafka-application-Variable-Query"
             },
             "refresh": 1,
