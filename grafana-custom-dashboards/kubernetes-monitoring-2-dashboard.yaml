@@ -2395,7 +2395,7 @@ data:
           "targets": [
             {
               "expr": "increase(kube_pod_container_status_restarts_total[5m]) > 0",
-              "legendFormat": "{{container}}",
+              "legendFormat": "{{pod}}{{container}}",
               "refId": "A"
             }
           ],
