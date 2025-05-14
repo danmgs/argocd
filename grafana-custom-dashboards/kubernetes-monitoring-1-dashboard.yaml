@@ -2204,7 +2204,7 @@ data:
         "to": "now"
       },
       "timepicker": {},
-      "timezone": "Asia/Yangon",
+      "timezone": "browser",
       "title": "Kubernetes Dashboard",
       "uid": "e1RXnCbVz",
       "version": 3
