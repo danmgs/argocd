@@ -387,7 +387,7 @@ data:
           "targets": [
             {
               "exemplar": true,
-              "expr": "sum (kube_pod_container_resource_requests{node=~\"^$Node$\",resource=\"cpu\"}) / sum (machine_cpu_cores{kubernetes_io_hostname=~\"^$Node$\"}) * 100",
+              "expr": "sum (kube_pod_container_resource_requests{node=~\"^$Node$\",resource=\"cpu\"}) / sum (machine_cpu_cores{node=~\"^$Node$\"}) * 100",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -469,7 +469,7 @@ data:
           "targets": [
             {
               "exemplar": true,
-              "expr": "sum (kube_pod_container_resource_requests{node=~\"^$Node$\",resource=\"memory\"}) / sum (machine_memory_bytes{kubernetes_io_hostname=~\"^$Node$\"}) * 100",
+              "expr": "sum (kube_pod_container_resource_requests{node=~\"^$Node$\",resource=\"memory\"}) / sum (machine_memory_bytes{node=~\"^$Node$\"}) * 100",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -1126,7 +1126,7 @@ data:
           "pluginVersion": "8.0.3",
           "targets": [
             {
-              "expr": "sum (container_fs_usage_bytes{device=~\"^/dev/.*$\",id=\"/\",kubernetes_io_hostname=~\"^$Node$\",job=\"kubernetes-service-endpoints\"}) / sum (container_fs_limit_bytes{device=~\"^/dev/.*$\",id=\"/\",kubernetes_io_hostname=~\"^$Node$\"}) * 100",
+              "expr": "sum (container_fs_usage_bytes{device=~\"^/dev/.*$\",id=~\"/.*\",node=~\"^$Node$\",job=\"kubernetes-service-endpoints\"}) / sum (container_fs_limit_bytes{device=~\"^/dev/.*$\",id=~\"/.*\",node=~\"^$Node$\"}) * 100",
               "format": "time_series",
               "hide": true,
               "interval": "10s",
@@ -1371,7 +1371,7 @@ data:
           "pluginVersion": "8.0.3",
           "targets": [
             {
-              "expr": "sum (rate (container_cpu_usage_seconds_total{id=\"/\",kubernetes_io_hostname=~\"^$Node$\"}[2m]))",
+              "expr": "sum (rate (container_cpu_usage_seconds_total{id=~\"^/.*\",node=~\"^$Node$\"}[2m]))",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -1527,7 +1527,7 @@ data:
           "pluginVersion": "8.0.3",
           "targets": [
             {
-              "expr": "sum (machine_cpu_cores{kubernetes_io_hostname=~\"^$Node$\"})",
+              "expr": "sum (machine_cpu_cores{node=~\"^$Node$\"})",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -1604,7 +1604,7 @@ data:
           "pluginVersion": "8.0.3",
           "targets": [
             {
-              "expr": "sum (container_memory_working_set_bytes{id=\"/\",kubernetes_io_hostname=~\"^$Node$\"})",
+              "expr": "sum (container_memory_working_set_bytes{id=~\"/.*\",node=~\"^$Node$\"})",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -1760,7 +1760,7 @@ data:
           "pluginVersion": "8.0.3",
           "targets": [
             {
-              "expr": "sum (machine_memory_bytes{kubernetes_io_hostname=~\"^$Node$\"})",
+              "expr": "sum (machine_memory_bytes{node=~\"^$Node$\"})",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -1837,7 +1837,7 @@ data:
           "pluginVersion": "8.0.3",
           "targets": [
             {
-              "expr": "sum (container_fs_usage_bytes{device=~\"^/dev/.*$\",id=\"/\",kubernetes_io_hostname=~\"^$Node$\"})",
+              "expr": "sum (container_fs_usage_bytes{device=~\"^/dev/.*$\",id=~\"/.*\",node=~\"^$Node$\"})",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -1914,7 +1914,7 @@ data:
           "pluginVersion": "8.0.3",
           "targets": [
             {
-              "expr": "sum (container_fs_limit_bytes{device=~\"^/dev/.*$\",id=\"/\",kubernetes_io_hostname=~\"^$Node$\"})",
+              "expr": "sum (container_fs_limit_bytes{device=~\"^/dev/.*$\",id=~\"/.*\",node=~\"^$Node$\"})",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -2090,7 +2090,7 @@ data:
           "targets": [
             {
               "exemplar": true,
-              "expr": "sum(rate (container_cpu_usage_seconds_total{image!=\"\",name=~\"^k8s_.*\",kubernetes_io_hostname=~\"^$Node$\", namespace=~\"^$namespace$\",container=~\"^$application$\"}[5m])) by (pod)",
+              "expr": "sum(rate (container_cpu_usage_seconds_total{image!=\"\",name=~\"^k8s_.*\",node=~\"^$Node$\", namespace=~\"^$namespace$\",container=~\"^$application$\"}[5m])) by (pod)",
               "hide": false,
               "interval": "10s",
               "legendFormat": "{{pod}}",
@@ -3141,7 +3141,7 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum (rate (container_network_receive_bytes_total{image!=\"\",name=~\"^k8s_.*\",kubernetes_io_hostname=~\"^$Node$\"}[2m])) by (kubernetes_io_role)",
+              "expr": "sum (rate (container_network_receive_bytes_total{image!=\"\",name=~\"^k8s_.*\",node=~\"^$Node$\"}[2m])) by (kubernetes_io_role)",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -3149,7 +3149,7 @@ data:
               "refId": "A"
             },
             {
-              "expr": "- sum (rate (container_network_transmit_bytes_total{image!=\"\",name=~\"^k8s_.*\",kubernetes_io_hostname=~\"^$Node$\"}[2m])) by (kubernetes_io_role)",
+              "expr": "- sum (rate (container_network_transmit_bytes_total{image!=\"\",name=~\"^k8s_.*\",node=~\"^$Node$\"}[2m])) by (kubernetes_io_role)",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -3157,7 +3157,7 @@ data:
               "refId": "B"
             },
             {
-              "expr": "sum (rate (container_network_receive_bytes_total{image!=\"\",name=~\"^k8s_.*\",kubernetes_io_hostname=~\"^$Node$\"}[2m])) by (kubernetes_io_role,kubernetes_io_hostname)",
+              "expr": "sum (rate (container_network_receive_bytes_total{image!=\"\",name=~\"^k8s_.*\",node=~\"^$Node$\"}[2m])) by (kubernetes_io_role,kubernetes_io_hostname)",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -3165,7 +3165,7 @@ data:
               "refId": "C"
             },
             {
-              "expr": "- sum (rate (container_network_transmit_bytes_total{image!=\"\",name=~\"^k8s_.*\",kubernetes_io_hostname=~\"^$Node$\"}[2m])) by (kubernetes_io_role,kubernetes_io_hostname)",
+              "expr": "- sum (rate (container_network_transmit_bytes_total{image!=\"\",name=~\"^k8s_.*\",node=~\"^$Node$\"}[2m])) by (kubernetes_io_role,kubernetes_io_hostname)",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -3273,7 +3273,7 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum (rate (container_network_receive_bytes_total{image!=\"\",name=~\"^k8s_.*\",kubernetes_io_hostname=~\"^$Node$\"}[2m])) by (pod_name)",
+              "expr": "sum (rate (container_network_receive_bytes_total{image!=\"\",name=~\"^k8s_.*\",node=~\"^$Node$\"}[2m])) by (pod_name)",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -3283,7 +3283,7 @@ data:
               "step": 10
             },
             {
-              "expr": "- sum (rate (container_network_transmit_bytes_total{image!=\"\",name=~\"^k8s_.*\",kubernetes_io_hostname=~\"^$Node$\"}[2m])) by (pod_name)",
+              "expr": "- sum (rate (container_network_transmit_bytes_total{image!=\"\",name=~\"^k8s_.*\",node=~\"^$Node$\"}[2m])) by (pod_name)",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -3395,7 +3395,7 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum (rate (container_network_receive_bytes_total{kubernetes_io_hostname=~\"^$Node$\"}[2m]))",
+              "expr": "sum (rate (container_network_receive_bytes_total{node=~\"^$Node$\"}[2m]))",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
@@ -3405,7 +3405,7 @@ data:
               "step": 10
             },
             {
-              "expr": "- sum (rate (container_network_transmit_bytes_total{kubernetes_io_hostname=~\"^$Node$\"}[2m]))",
+              "expr": "- sum (rate (container_network_transmit_bytes_total{node=~\"^$Node$\"}[2m]))",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 1,
