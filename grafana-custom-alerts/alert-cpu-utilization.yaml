@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: alert-cpu-utilization
+  name: alert-cpu-utilization-configmap
   labels:
     my_custom_grafana_alert: "1"
 data:
