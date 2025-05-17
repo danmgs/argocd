@@ -500,7 +500,7 @@ data:
       },
       "timepicker": {},
       "timezone": "browser",
-      "title": "Application Logs Copy",
+      "title": "Application Logs",
       "uid": "b6df7982-1987-4a75-8bfc-271196317be0",
       "version": 8
     }
