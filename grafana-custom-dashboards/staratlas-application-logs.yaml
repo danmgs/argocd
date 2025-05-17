@@ -27,7 +27,7 @@ data:
       "editable": true,
       "fiscalYearStartMonth": 0,
       "graphTooltip": 0,
-      "id": 43,
+      "id": 9,
       "links": [],
       "panels": [
         {
@@ -59,70 +59,26 @@ data:
                 ]
               }
             },
-            "overrides": [
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "@timestamp"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 170
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "kubernetes.pod_name"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 216
-                  }
-                ]
-              },
-              {
-                "matcher": {
-                  "id": "byName",
-                  "options": "kubernetes.host"
-                },
-                "properties": [
-                  {
-                    "id": "custom.width",
-                    "value": 261
-                  }
-                ]
-              }
-            ]
+            "overrides": []
           },
           "gridPos": {
-            "h": 11,
+            "h": 17,
             "w": 24,
             "x": 0,
             "y": 0
           },
-          "id": 2,
+          "id": 4,
           "options": {
             "cellHeight": "sm",
             "footer": {
               "countRows": false,
-              "enablePagination": false,
               "fields": "",
               "reducer": [
                 "sum"
               ],
               "show": false
             },
-            "showHeader": true,
-            "sortBy": [
-              {
-                "desc": true,
-                "displayName": "kubernetes.host"
-              }
-            ]
+            "showHeader": true
           },
           "pluginVersion": "12.0.0",
           "targets": [
@@ -133,6 +89,7 @@ data:
                 "type": "elasticsearch",
                 "uid": "elasticsearch"
               },
+              "hide": false,
               "metrics": [
                 {
                   "id": "1",
@@ -152,163 +109,26 @@ data:
             {
               "id": "organize",
               "options": {
-                "excludeByName": {},
                 "includeByName": {
                   "@timestamp": true,
+                  "kubernetes.container_name": true,
                   "kubernetes.host": true,
                   "kubernetes.pod_name": true,
-                  "log": true
+                  "level": true,
+                  "message": true
                 },
                 "indexByName": {
                   "@timestamp": 0,
-                  "_id": 4,
-                  "_index": 5,
-                  "_source": 6,
-                  "_type": 7,
-                  "docker.container_id": 8,
-                  "highlight": 9,
-                  "id": 10,
-                  "kubernetes.container_image": 11,
-                  "kubernetes.container_image_id": 12,
-                  "kubernetes.container_name": 13,
-                  "kubernetes.host": 1,
-                  "kubernetes.labels.app": 14,
-                  "kubernetes.labels.pod-template-hash": 15,
-                  "kubernetes.labels.security.istio.io/tlsMode": 16,
-                  "kubernetes.labels.service.istio.io/canonical-name": 17,
-                  "kubernetes.labels.service.istio.io/canonical-revision": 18,
-                  "kubernetes.labels.version": 19,
-                  "kubernetes.master_url": 20,
-                  "kubernetes.namespace_id": 21,
-                  "kubernetes.namespace_labels.istio-injection": 22,
-                  "kubernetes.namespace_labels.kubernetes.io/metadata.name": 23,
-                  "kubernetes.namespace_name": 24,
-                  "kubernetes.pod_id": 25,
-                  "kubernetes.pod_ip": 26,
-                  "kubernetes.pod_name": 2,
-                  "log": 3,
-                  "logtag": 27,
-                  "sort": 28,
-                  "stream": 29,
-                  "tag": 30
-                },
-                "renameByName": {}
+                  "kubernetes.container_name": 5,
+                  "kubernetes.host": 3,
+                  "kubernetes.pod_name": 4,
+                  "level": 1,
+                  "message": 2
+                }
               }
             }
           ],
           "type": "table"
-        },
-        {
-          "datasource": {
-            "type": "elasticsearch",
-            "uid": "elasticsearch"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "barWidthFactor": 0.6,
-                "drawStyle": "line",
-                "fillOpacity": 0,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "showPoints": "auto",
-                "spanNulls": false,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              }
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 6,
-            "w": 24,
-            "x": 0,
-            "y": 11
-          },
-          "id": 3,
-          "options": {
-            "legend": {
-              "calcs": [],
-              "displayMode": "list",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "hideZeros": false,
-              "mode": "single",
-              "sort": "none"
-            }
-          },
-          "pluginVersion": "12.0.0",
-          "targets": [
-            {
-              "alias": "",
-              "bucketAggs": [
-                {
-                  "field": "@timestamp",
-                  "id": "2",
-                  "settings": {
-                    "interval": "auto"
-                  },
-                  "type": "date_histogram"
-                }
-              ],
-              "datasource": {
-                "type": "elasticsearch",
-                "uid": "elasticsearch"
-              },
-              "hide": false,
-              "metrics": [
-                {
-                  "id": "1",
-                  "type": "count"
-                }
-              ],
-              "query": "",
-              "refId": "A",
-              "timeField": "@timestamp"
-            }
-          ],
-          "title": "Logs Volume",
-          "type": "timeseries"
         }
       ],
       "preload": false,
@@ -317,6 +137,7 @@ data:
       "templating": {
         "list": [
           {
+            "baseFilters": [],
             "datasource": {
               "type": "elasticsearch",
               "uid": "elasticsearch"
@@ -335,5 +156,5 @@ data:
       "timezone": "browser",
       "title": "Application Logs",
       "uid": "9db6577e-8716-42a3-8196-79a958608902",
-      "version": 8
+      "version": 1
     }
