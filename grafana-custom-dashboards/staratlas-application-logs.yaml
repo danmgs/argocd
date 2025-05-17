@@ -33,7 +33,7 @@ data:
         {
           "datasource": {
             "type": "elasticsearch",
-            "uid": "elasticsearch",
+            "uid": "elasticsearch"
           },
           "fieldConfig": {
             "defaults": {
@@ -131,7 +131,7 @@ data:
               "bucketAggs": [],
               "datasource": {
                 "type": "elasticsearch",
-                "uid": "elasticsearch",
+                "uid": "elasticsearch"
               },
               "metrics": [
                 {
@@ -201,7 +201,7 @@ data:
         {
           "datasource": {
             "type": "elasticsearch",
-            "uid": "elasticsearch",
+            "uid": "elasticsearch"
           },
           "fieldConfig": {
             "defaults": {
@@ -293,7 +293,7 @@ data:
               ],
               "datasource": {
                 "type": "elasticsearch",
-                "uid": "elasticsearch",
+                "uid": "elasticsearch"
               },
               "hide": false,
               "metrics": [
@@ -319,7 +319,7 @@ data:
           {
             "datasource": {
               "type": "elasticsearch",
-              "uid": "elasticsearch",
+              "uid": "elasticsearch"
             },
             "filters": [],
             "name": "Filters",
