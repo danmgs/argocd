@@ -80,7 +80,7 @@ data:
                 "properties": [
                   {
                     "id": "custom.width",
-                    "value": 82
+                    "value": 80
                   }
                 ]
               },
@@ -104,7 +104,7 @@ data:
                 "properties": [
                   {
                     "id": "custom.width",
-                    "value": 241
+                    "value": 227
                   }
                 ]
               }
@@ -116,7 +116,7 @@ data:
             "x": 0,
             "y": 0
           },
-          "id": 7,
+          "id": 9,
           "options": {
             "cellHeight": "sm",
             "footer": {
@@ -149,12 +149,12 @@ data:
                   "type": "logs"
                 }
               ],
-              "query": "level.keyword:error",
+              "query": "message.keyword:initSignerSocket*",
               "refId": "A",
               "timeField": "@timestamp"
             }
           ],
-          "title": "Connected client",
+          "title": "Connected clients",
           "transformations": [
             {
               "id": "organize",
@@ -252,7 +252,7 @@ data:
                 "properties": [
                   {
                     "id": "custom.width",
-                    "value": 246
+                    "value": 226
                   }
                 ]
               }
@@ -502,5 +502,5 @@ data:
       "timezone": "browser",
       "title": "Application Logs Copy",
       "uid": "b6df7982-1987-4a75-8bfc-271196317be0",
-      "version": 7
+      "version": 8
     }
