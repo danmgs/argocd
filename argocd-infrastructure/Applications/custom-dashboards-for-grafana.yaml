@@ -3,6 +3,9 @@ kind: Application
 metadata:
   name: custom-dashboards-for-grafana
   namespace: argo
+  annotations:
+    notifications.argoproj.io/subscribe.on-out-of-sync.discord: ''
+    notifications.argoproj.io/subscribe.on-sync-succeeded.discord: ''  
 spec:
   destination:
     namespace: kube-prometheus-stack
