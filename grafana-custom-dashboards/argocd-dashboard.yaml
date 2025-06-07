@@ -1545,7 +1545,7 @@ data:
               "steppedLine": false,
               "targets": [
                 {
-                  "expr": "go_memstats_heap_alloc_bytes{job=\"argo-argocd-metrics\",namespace=~\"$namespace\"}",
+                  "expr": "go_memstats_heap_alloc_bytes{job=\"argo-argocd-application-controller-metrics\",namespace=~\"$namespace\"}",
                   "format": "time_series",
                   "intervalFactor": 1,
                   "legendFormat": "{{namespace}}",
@@ -1642,7 +1642,7 @@ data:
               "steppedLine": false,
               "targets": [
                 {
-                  "expr": "irate(process_cpu_seconds_total{job=\"argo-argocd-metrics\",namespace=~\"$namespace\"}[1m])",
+                  "expr": "irate(process_cpu_seconds_total{job=\"argo-argocd-application-controller-metrics\",namespace=~\"$namespace\"}[1m])",
                   "format": "time_series",
                   "intervalFactor": 1,
                   "legendFormat": "{{namespace}}",
@@ -1740,7 +1740,7 @@ data:
               "steppedLine": false,
               "targets": [
                 {
-                  "expr": "go_goroutines{job=\"argo-argocd-metrics\",namespace=~\"$namespace\"}",
+                  "expr": "go_goroutines{job=\"argo-argocd-application-controller-metrics\",namespace=~\"$namespace\"}",
                   "format": "time_series",
                   "intervalFactor": 1,
                   "legendFormat": "{{namespace}}",
